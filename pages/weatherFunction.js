@@ -1,5 +1,4 @@
 const { I,locatorsPage } = inject();
-
 module.exports = {
     async getWeatherFromAccuweather(city_state_country,landingPageURL){
     /**This function hit https://www.accuweather.com/ url, input city name and 
@@ -31,7 +30,7 @@ module.exports = {
     if(Math.abs(tempCity1-tempCity2)>=5){
      throw 'There is more than 5°C difference in temperature between two cities';
     }
-     else return true;
+     else return 'Difference is within permissible limit';
 },
     
   }
