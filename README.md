@@ -22,4 +22,4 @@ npx codeceptjs run --steps weather_test.js
 
 Here,I have used codeceptjs with puppeteer.
 
-
+Attached flow diagram to understand code flow : https://github.com/anchal1806/weather-api-ui-test/blob/master/implementationDiagram.pdf
