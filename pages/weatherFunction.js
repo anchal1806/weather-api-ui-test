@@ -11,7 +11,6 @@ module.exports = {
     I.pressKey(locatorsPage.enterKey);
     I.waitInUrl(landingPageURL,30);
     const temp = await I.grabTextFromAll(locatorsPage.accuweatherTemperature);
-    I.say('Temperature in ' + city_state_country +'is'+ temp);
     let convertTemp = temp.toString().split('°C');
     return convertTemp[0];
     },
@@ -24,13 +23,13 @@ module.exports = {
          return false;
    },
 
-    compareTwoCitiesTemperature(tempCity1,tempCity2){ 
-        /* This function compare two city's temperature if temperature is greater than 5 it throws custom
-        exception saying There is more than 5°C difference in temperature between two cities  */
-    if(Math.abs(tempCity1-tempCity2)>=5){
-     throw 'There is more than 5°C difference in temperature between two cities';
+    async compareTwoCitiesTemperature(tempCity1,tempCity2){ 
+    /* This function compare two city's temperature if temperature is greater than 5 it throws custom
+        exception saying There is more than 10°C difference in temperature between two cities  */
+    if(Math.abs(tempCity1-tempCity2)>=10){
+     throw 'There is more than 10°C difference in temperature between two cities';
     }
-     else return 'Difference is within permissible limit';
+     else return 'Difference is within permissible limit that is less than or equal to 10°C';
 },
     
   }
