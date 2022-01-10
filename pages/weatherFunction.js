@@ -29,7 +29,7 @@ module.exports = {
     if(Math.abs(tempCity1-tempCity2)>=10){
      throw 'There is more than 10°C difference in temperature between two cities';
     }
-     else return 'Difference is within permissible limit that is less than or equal to 10°C';
+     else return 'Temperature difference between two city is within permissible limit that is less than or equal to 10°C';
 },
     
   }
