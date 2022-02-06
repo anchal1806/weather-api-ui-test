@@ -1,4 +1,4 @@
-const { I,locatorsPage } = inject();
+const { I,locatorsPage,commonPage } = inject();
 module.exports = {
     async getWeatherFromAccuweather(city_state_country,landingPageURL){
     /**This function hit https://www.accuweather.com/ url, input city name and 
@@ -6,9 +6,9 @@ module.exports = {
      * temperature's value.
       */
     I.amOnPage('/');
-    I.waitForVisible(locatorsPage.accuweatherSearchBar,locatorsPage.waitLimit);
+    I.waitForVisible(locatorsPage.accuweatherSearchBar,commonPage.waitLimit);
     I.fillField(locatorsPage.accuweatherSearchBar,city_state_country);
-    I.pressKey(locatorsPage.enterKey);
+    I.pressKey(commonPage.enterKey);
     I.waitInUrl(landingPageURL,30);
     const temp = await I.grabTextFromAll(locatorsPage.accuweatherTemperature);
     let convertTemp = temp.toString().split('°C');
