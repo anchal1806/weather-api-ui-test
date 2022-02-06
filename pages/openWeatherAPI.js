@@ -1,7 +1,7 @@
-module.exports = {
-
-async weatherMapAPI(apiURL,queryCity,unitMetric,apiKey){
+class getWeatherForCity extends baseAPI
+{
   /*Using this function,getting temperature of given city from API */
+async weatherMapAPI(apiURL,queryCity,unitMetric,apiKey){
   return new Promise((resolve, reject) => {
   let apiResponse = '';
 const https = require('https');
@@ -25,6 +25,7 @@ req.on("error", (err) => {
 req.end();
 });
 }
+
 }
 
    
